@@ -1,0 +1,12 @@
+GET http://localhost:8080/posts
+
+###
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+{
+    "firstName": "nonso",
+    "lastName": "nwosu",
+    "password": "ilovecoding12345",
+    "email": "louisn4wosu9@gmail.com"
+}
