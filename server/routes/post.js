@@ -1,13 +1,14 @@
 const express = require("express");
-const bcrypt = require('bcrypt-node')
 
 //local imports;
-const userControllers = require('../controllers/userController')
-const { getUsers, postNewUser } = userControllers;
+const { getUsers, postNewUser } = require("../controllers/userController");
+const signinHandler = require('../controllers/signin');
+const  auth = require('../middleware/auth');
 
 const route = express.Router();
 
 route.get("/", getUsers);
-route.post('/', postNewUser);
+route.post("/signup", postNewUser);
+route.post("/signin", signinHandler);
 
 module.exports = route;

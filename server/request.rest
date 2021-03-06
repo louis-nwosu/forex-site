@@ -1,12 +1,21 @@
 GET http://localhost:8080/posts
 
 ###
-POST http://localhost:8080/posts
+POST http://localhost:8080/posts/signup
 Content-Type: application/json
 
 {
-    "firstName": "nonso",
-    "lastName": "nwosu",
-    "password": "ilovecoding12345",
-    "email": "louisn4wosu9@gmail.com"
+    "firstName": "naza",
+    "lastName": "amuche",
+    "password": "okpalugo1@gmail.com",
+    "email": "okpalugo1@gmail.com"
+}
+
+###
+POST http://localhost:8080/posts/signin
+Content-Type: application/json
+
+{
+    "email": "egbon@gmail.com",
+    "password": "nonsownosunah@gmail.com"
 }

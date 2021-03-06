@@ -22,18 +22,6 @@ const userSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  balance: {
-    type: Number,
-    default: 0.0,
-  },
-  invested: {
-    type: Number,
-    default: 0.0,
-  },
-  withdrew: {
-    type: Number,
-    default: 0.0,
-  },
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Btcusers", userSchema);

@@ -17,18 +17,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //connect to mongoDB
-mongoose
-  .connect(process.env.DB_CONNECT, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
-  .then(() =>
-    app.listen(app.get("port"), () =>
-      console.log(`server running on ${app.get("port")}`)
-    )
-  )
-  .catch((error) => console.log(error.message));
+mongoose.connect(process.env.DB_CONNECT, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+});
 
 const { connection } = mongoose;
 
@@ -40,3 +33,4 @@ connection.once("open", function () {
 app.use("/posts", postRoutes);
 
 app.set("port", process.env.PORT || 8080);
+app.listen(app.get('port'), () => console.log('server is now running on ' + app.get('port')))
