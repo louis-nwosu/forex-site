@@ -30,7 +30,11 @@ const signinHandler = async (req, res) => {
   const token = jwt.sign({ _id: user._id }, process.env.SECRET_TOKEN);
 
   //if everything is okay, send back the data
-  return res.status(200).json({ user, token });
+  try {
+    return res.status(200).json({ user, token });
+  } catch (error) {
+    res.status(400).json({ err: "bad request bro" });
+  }
 };
 
 module.exports = signinHandler;

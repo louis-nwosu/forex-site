@@ -1,18 +1,18 @@
-GET http://localhost:8080/posts
+GET http://localhost:3000/posts
 
 ###
-POST http://localhost:8080/posts/signup
+POST http://localhost:3000/posts/signup
 Content-Type: application/json
 
 {
     "firstName": "naza",
-    "lastName": "amuche",
-    "password": "okpalugo1@gmail.com",
-    "email": "okpalugo1@gmail.com"
+    "lastName": "amuche2",
+    "password": "okpalugo100@gmail.com",
+    "email": "okpalugo100@gmail.com"
 }
 
 ###
-POST http://localhost:8080/posts/signin
+POST http://localhost:3000/posts/signin
 Content-Type: application/json
 
 {

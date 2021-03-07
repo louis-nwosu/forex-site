@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require('cors');
 
 //import env config file and configure it;
 const dotenv = require("dotenv");
@@ -15,6 +16,7 @@ const app = express();
 //middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 //connect to mongoDB
 mongoose.connect(process.env.DB_CONNECT, {
@@ -32,5 +34,5 @@ connection.once("open", function () {
 
 app.use("/posts", postRoutes);
 
-app.set("port", process.env.PORT || 8080);
+app.set("port", process.env.PORT || 3000);
 app.listen(app.get('port'), () => console.log('server is now running on ' + app.get('port')))
