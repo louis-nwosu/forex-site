@@ -1,21 +1,24 @@
-GET http://localhost:3000/posts
+GET http://localhost:8080/posts
 
 ###
-POST http://localhost:3000/posts/signup
+POST http://localhost:8080/posts/signup
 Content-Type: application/json
 
 {
     "firstName": "naza",
-    "lastName": "amuche2",
+    "lastName": "i dont know your surname",
     "password": "okpalugo100@gmail.com",
-    "email": "okpalugo100@gmail.com"
+    "email": "osi@gmail2224445657.com"
 }
 
 ###
-POST http://localhost:3000/posts/signin
+POST http://localhost:8080/posts/signin
 Content-Type: application/json
 
 {
-    "email": "egbon@gmail.com",
-    "password": "nonsownosunah@gmail.com"
+    "email": "louis94@gmail.com",
+    "password": "123456789"
 }
+
+###
+GET http://localhost:8080/posts/details/6048c2c48f78df1813d03ac3
