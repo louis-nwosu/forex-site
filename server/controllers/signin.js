@@ -31,7 +31,7 @@ const signinHandler = async (req, res) => {
 
   //if everything is okay, send back the data
   try {
-    return res.status(200).json({ user, token });
+    return res.status(200).json({ token, user });
   } catch (error) {
     res.status(400).json({ err: "bad request bro" });
   }

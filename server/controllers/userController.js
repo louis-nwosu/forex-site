@@ -58,7 +58,7 @@ const postNewUser = async (req, res) => {
       { expiresIn: "1h" }
     );
 
-    return res.status(200).json({ savedUser, token });
+    return res.status(200).json({ token, savedUser });
     //if error occured while saving;
   } catch (error) {
     res.status(400).json(error.message);

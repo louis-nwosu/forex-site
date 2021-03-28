@@ -1,9 +1,9 @@
 const UserDetail = require("../models/detailModel");
 
 const loaddetails = async (req, res) => {
+  
   //get the ID from the request
   const _userID = req.params.ID;
-  console.log(_userID);
   //find user that matches the ID
   try {
     const user_detail = await UserDetail.findOne({ userID: _userID });
