@@ -16,9 +16,9 @@ const getUsers = async (req, res) => {
 };
 
 const postNewUser = async (req, res) => {
+  console.log(req.body);
   try {
     //validate data from request
-    const { error } = registerValidation(req.body);
     if (error) {
       return res.status(400).send(error.details[0].message);
     }
