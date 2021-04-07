@@ -6,9 +6,9 @@ Content-Type: application/json
 
 {
     "firstName": "naza",
-    "lastName": "i dont know your surname",
+    "lastName": "ioooo",
     "password": "okpalugo100@gmail.com",
-    "email": "osi@gmail2224445657.com"
+    "email": "test3@gmail.com"
 }
 
 ###
@@ -16,8 +16,8 @@ POST http://localhost:8080/posts/signin
 Content-Type: application/json
 
 {
-    "email": "louis94@gmail.com",
-    "password": "123456789"
+    "email": "osi@gmail2224445657.com",
+    "password": "okpalugo100@gmail.com"
 }
 
 ###

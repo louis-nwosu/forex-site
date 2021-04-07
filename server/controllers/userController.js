@@ -16,13 +16,7 @@ const getUsers = async (req, res) => {
 };
 
 const postNewUser = async (req, res) => {
-  console.log(req.body);
   try {
-    //validate data from request
-    if (error) {
-      return res.status(400).send(error.details[0].message);
-    }
-
     //check if user already exists
     const isUserTaken = await BtcUser.findOne({ email: req.body.email });
     if (isUserTaken) {
@@ -61,7 +55,8 @@ const postNewUser = async (req, res) => {
     return res.status(200).json({ token, savedUser });
     //if error occured while saving;
   } catch (error) {
-    res.status(400).json(error.message);
+    console.log(error.message);
+    res.status(400).json({ error: error.message });
   }
 };
 
