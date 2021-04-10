@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 
 //import env config file and configure it;
 const dotenv = require("dotenv");
@@ -12,6 +13,9 @@ const postRoutes = require("./routes/post");
 
 //initialize express application
 const app = express();
+
+//server static file
+app.use(express.static(path.join(__dirname, "build")));
 
 //middlewares
 app.use(express.json());
@@ -31,7 +35,9 @@ connection.on("error", console.error.bind(console, "connection error:"));
 connection.once("open", function () {
   console.log("database connection established successfully");
 });
-
+app.get("/home", (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, "build", "index.html"));
+});
 app.use("/posts", postRoutes);
 
 app.set("port", process.env.PORT || 8080);
