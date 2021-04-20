@@ -14,9 +14,6 @@ const postRoutes = require("./routes/post");
 //initialize express application
 const app = express();
 
-//server static file
-app.use(express.static(path.join(__dirname, "build")));
-
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
